@@ -4,10 +4,12 @@ import { Points, PointMaterial } from "@react-three/drei";
 import { Canvas, type PointsProps, useFrame } from "@react-three/fiber";
 import * as random from "maath/random";
 import { useState, useRef, Suspense } from "react";
-import * as THREE from "three"; // ✅ umumiy Three import
+
+// ❗ Bu joyni soddalashtiramiz, THREE dan import umuman kerak emas
+// TypeScript uchun 'any' ishlatamiz, chunki ref turini qat'iy bilish shart emas
 
 export const StarBackground = (props: PointsProps) => {
-  const ref = useRef<THREE.Object3D | null>(null); // ✅ Points o‘rniga Object3D ishlatyapmiz
+  const ref = useRef<any>(null); // ✅ TypeScript xatosi yo‘qoladi
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(5000), { radius: 1.2 })
   );
