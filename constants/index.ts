@@ -126,15 +126,12 @@ export const FRONTEND_SKILL = [
     width: 80,
     height: 80,
   },
-
   {
     skill_name: "React",
     image: "react.png",
     width: 80,
     height: 80,
   },
-
-
   {
     skill_name: "Next.js 14",
     image: "next.png",
@@ -162,16 +159,15 @@ export const BACKEND_SKILL = [
     width: 40,
     height: 40,
   },
-
-
 ] as const;
 
+// FULLSTACK_SKILL FRONTEND va BACKEND skilllarni birlashtiradi
 export const FULLSTACK_SKILL = [
+  ...FRONTEND_SKILL,
+  ...BACKEND_SKILL,
 ] as const;
 
-export const OTHER_SKILL = [
-
-] as const;
+export const OTHER_SKILL = [] as const;
 
 export const PROJECTS = [
   {
