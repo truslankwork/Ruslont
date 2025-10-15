@@ -4,10 +4,10 @@ import { Points, PointMaterial } from "@react-three/drei";
 import { Canvas, type PointsProps, useFrame } from "@react-three/fiber";
 import * as random from "maath/random";
 import { useState, useRef, Suspense } from "react";
-import { Points as ThreePoints } from "three"; // <-- shu qatorda PointsType o‘rniga ThreePoints
+import * as THREE from "three"; // <-- THREE namespace import qildik
 
 export const StarBackground = (props: PointsProps) => {
-  const ref = useRef<ThreePoints | null>(null);
+  const ref = useRef<THREE.Points | null>(null); // <-- endi THREE.Points tipidan foydalanamiz
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(5000), { radius: 1.2 })
   );
